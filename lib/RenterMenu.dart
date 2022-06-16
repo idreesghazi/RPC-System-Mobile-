@@ -1,8 +1,11 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:untitled/RenterAddProperty.dart';
 
 import 'NavBar.dart';
+import 'RenterMainMenu.dart';
+import 'RenterMainMenu1.dart';
 
 class RenterMenuScreen extends StatefulWidget {
 
@@ -80,7 +83,7 @@ class _RenterMenuScreenState extends State<RenterMenuScreen> {
                               borderRadius: BorderRadius.all(Radius.circular(20.0)),
                               borderSide: BorderSide(color: Colors.black.withOpacity(0.2)), // your color
                           ),
-                          hintText: 'Your Email',
+                          hintText: 'Search',
                           hintStyle: TextStyle(fontFamily: "Abhaya Libre", fontWeight: FontWeight.bold, color: Color(0xffb733AEB)),
                         ),
                       ),
@@ -96,7 +99,11 @@ class _RenterMenuScreenState extends State<RenterMenuScreen> {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           child: InkWell(
                             splashColor: Colors.black26,
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                                return RenterMainMenuScreen();
+                              },),);
+                            },
                             child: Column(
                               children: [
                                 Container(
@@ -131,7 +138,11 @@ class _RenterMenuScreenState extends State<RenterMenuScreen> {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           child: InkWell(
                             splashColor: Colors.black26,
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                                return RenterMainMenuScreen1();
+                              },),);
+                            },
                             child: Column(
                               children: [
                                 Container(
@@ -139,7 +150,7 @@ class _RenterMenuScreenState extends State<RenterMenuScreen> {
                                   height: 111,
                                   decoration: new BoxDecoration(
                                       image: DecorationImage(
-                                          image: AssetImage("lib/img/prop2.jpg"),
+                                          image: AssetImage("lib/img/prop3.jpg"),
                                           fit: BoxFit.cover
                                       )
 
@@ -153,7 +164,7 @@ class _RenterMenuScreenState extends State<RenterMenuScreen> {
                                     alignment: Alignment.center,
                                     width: 154.56,
                                     height: 32.27,
-                                    child: Text("House 33 - DHA",style:TextStyle(fontSize: 18,fontFamily: "Abhaya Libre", fontWeight: FontWeight.bold, color: Color(0xfff4f4f4)))),
+                                    child: Text("House 40 - G15/1",style:TextStyle(fontSize: 18,fontFamily: "Abhaya Libre", fontWeight: FontWeight.bold, color: Color(0xfff4f4f4)))),
 
                               ],
                             ),
@@ -174,7 +185,11 @@ class _RenterMenuScreenState extends State<RenterMenuScreen> {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           child: InkWell(
                             splashColor: Colors.black26,
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                                return RenterAddPropertyScreen();
+                              },),);
+                            },
                             child: Column(
                               children: [
                                 Container(

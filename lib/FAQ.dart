@@ -2,10 +2,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:untitled/ChatBot.dart';
 import 'package:untitled/signup.dart';
-
 import 'NavBar.dart';
 
 class FAQScreen extends StatefulWidget {
@@ -14,14 +14,27 @@ class FAQScreen extends StatefulWidget {
   @override
   State<FAQScreen> createState() => _FAQScreenState();
 }
+void changeColor() {
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.black,
+        systemNavigationBarIconBrightness: Brightness.light,
+      )
+  );
+}
 
 class _FAQScreenState extends State<FAQScreen> {
+  void initState() {
+    super.initState();
+    changeColor();
+  }
   final TextEditingController emailController = new TextEditingController();
   final TextEditingController nameController = new TextEditingController();
   final items = ['Chat With Bot', 'Live Chat'];
   String? value;
   @override
   Widget build(BuildContext context) => Scaffold(
+
         resizeToAvoidBottomInset: false,
         drawer: NavBar(),
         body:
@@ -169,15 +182,9 @@ class _FAQScreenState extends State<FAQScreen> {
                             final String email = emailController.text.trim();
                             final String name = nameController.text.trim();
                             if(value == "Chat With Bot"){
-                              showDialog(
-                                  context: context,
-                                  builder: (BuildContext context){
-                                    return AlertDialog(
-                                      title: Text("Chatbot Not Connected"),
-                                      content: Text("Please Check your Internet Connection"),
-                                    );
-                                  }
-                              );
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                                return ChatBotScreen();
+                              },),);
                             }
                             else if(value == "Live Chat" && !email.isEmpty && !name.isEmpty){
                               showDialog(
@@ -227,4 +234,6 @@ class _FAQScreenState extends State<FAQScreen> {
 
     );
   }
+
+
 

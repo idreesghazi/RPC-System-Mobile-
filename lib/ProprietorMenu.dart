@@ -2,6 +2,10 @@
 import 'package:flutter/material.dart';
 
 import 'NavBar.dart';
+import 'ProprietorMainMenu1.dart';
+import 'ProprietorMainMenu2.dart';
+import 'ProprietorMainMenu3.dart';
+import 'RenterMainMenu1.dart';
 
 class ProprietorMenuScreen extends StatefulWidget {
   const ProprietorMenuScreen({Key? key}) : super(key: key);
@@ -77,7 +81,7 @@ class _ProprietorMenuScreenState extends State<ProprietorMenuScreen> {
                             borderRadius: BorderRadius.all(Radius.circular(20.0)),
                             borderSide: BorderSide(color: Colors.black.withOpacity(0.2)), // your color
                           ),
-                          hintText: 'Your Email',
+                          hintText: 'Search',
                           hintStyle: TextStyle(fontFamily: "Abhaya Libre", fontWeight: FontWeight.bold, color: Color(0xffb733AEB)),
                         ),
                       ),
@@ -93,7 +97,11 @@ class _ProprietorMenuScreenState extends State<ProprietorMenuScreen> {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           child: InkWell(
                             splashColor: Colors.black26,
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                                return const ProprietorMainMenuScreen2();
+                              },),);
+                            },
                             child: Column(
                               children: [
                                 Container(
@@ -128,7 +136,11 @@ class _ProprietorMenuScreenState extends State<ProprietorMenuScreen> {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           child: InkWell(
                             splashColor: Colors.black26,
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                                return ProprietorMainMenuScreen3();
+                              },),);
+                            },
                             child: Column(
                               children: [
                                 Container(
@@ -170,7 +182,11 @@ class _ProprietorMenuScreenState extends State<ProprietorMenuScreen> {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           child: InkWell(
                             splashColor: Colors.black26,
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                                return ProprietorMainMenuScreen1();
+                              },),);
+                            },
                             child: Column(
                               children: [
                                 Container(
